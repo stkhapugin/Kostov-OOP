@@ -15,7 +15,10 @@
 class Printable: public Named {
     
 public:
-    void printOut(); //< prints the object name
+    void printOut() //< prints the object name
+    {
+        std::cout << name << std::endl;
+    }
     using Named::Named;
 };
 
