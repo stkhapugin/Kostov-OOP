@@ -7,13 +7,11 @@
 //
 
 #include <iostream>
-#include "XListTestCase.h"
+#include "Tests.h"
 
 int main(int argc, const char * argv[])
 {
-    XListTestCase testCase;
-    testCase.testXList();
-    
+    runTests();
     return 0;
 }
 

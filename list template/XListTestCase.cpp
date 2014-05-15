@@ -123,7 +123,7 @@ void testIterator(){
     assert(*it.currentItem() == 0);
 }
 
-void XListTestCase::testXList() {
+void testXList() {
     std::cout << "running XList tests" << std::endl;
     testCreation();
     testEmptiness();

@@ -11,10 +11,6 @@
 
 #include <iostream>
 
-class XListTestCase {
-    
-public:
-    void testXList();
-};
+void testXList();
 
 #endif /* defined(__list_template__XListTestCase__) */
