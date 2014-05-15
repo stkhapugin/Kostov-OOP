@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59220EF919251240007B9546 /* XListTestCase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59220EF719251240007B9546 /* XListTestCase.cpp */; };
 		6F16271718D6C58A00A72276 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F16271618D6C58A00A72276 /* main.cpp */; };
 		6F16271918D6C58A00A72276 /* list_template.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6F16271818D6C58A00A72276 /* list_template.1 */; };
 /* End PBXBuildFile section */
@@ -25,10 +26,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		59220EF419250DD7007B9546 /* XList.tpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = XList.tpp; sourceTree = "<group>"; };
+		59220EF719251240007B9546 /* XListTestCase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XListTestCase.cpp; sourceTree = "<group>"; };
+		59220EF819251240007B9546 /* XListTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XListTestCase.h; sourceTree = "<group>"; };
 		6F16271318D6C58A00A72276 /* list template */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "list template"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F16271618D6C58A00A72276 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6F16271818D6C58A00A72276 /* list_template.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = list_template.1; sourceTree = "<group>"; };
-		6F16272018D6C5A400A72276 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		6F16272018D6C5A400A72276 /* XList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XList.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +67,10 @@
 			children = (
 				6F16271618D6C58A00A72276 /* main.cpp */,
 				6F16271818D6C58A00A72276 /* list_template.1 */,
-				6F16272018D6C5A400A72276 /* List.h */,
+				6F16272018D6C5A400A72276 /* XList.h */,
+				59220EF419250DD7007B9546 /* XList.tpp */,
+				59220EF719251240007B9546 /* XListTestCase.cpp */,
+				59220EF819251240007B9546 /* XListTestCase.h */,
 			);
 			path = "list template";
 			sourceTree = "<group>";
@@ -119,6 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59220EF919251240007B9546 /* XListTestCase.cpp in Sources */,
 				6F16271718D6C58A00A72276 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +237,7 @@
 				6F16271E18D6C58A00A72276 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
