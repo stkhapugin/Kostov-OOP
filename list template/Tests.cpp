@@ -9,8 +9,10 @@
 #include "Tests.h"
 #include "PrintableTestCase.h"
 #include "XListTestCase.h"
+#include "ShapeTestCase.h"
 
 void runTests () {
     testPrintable();
     testXList();
+    testShape();
 }

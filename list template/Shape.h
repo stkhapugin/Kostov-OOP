@@ -17,7 +17,7 @@ static int shapeCount;
 class Shape: public Printable {
     
 public:
-    int getCount() //< returns total number of all shapes in heap and on stack
+    static int getCount() //< returns total number of all shapes in heap and on stack
     {
         return shapeCount;
     }
