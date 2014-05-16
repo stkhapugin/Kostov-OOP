@@ -35,12 +35,12 @@ XList<T>::XList() {
 #pragma mark - unsorted
 
 template <class T>
-bool XList<T>::isEmpty(){
+bool XList<T>::isEmpty() const{
     return (this->head->next == this->head);
 }
 
 template <class T>
-int XList<T>::numberOfElements() {
+int XList<T>::numberOfElements() const{
     
     ListNode * naught = this->head;
     ListNode * node = naught;
@@ -121,32 +121,32 @@ void XList<T>::deleteNode(ListNode * node){
 #pragma mark - getting elements
 
 template <class T>
-T * XList<T>::firstObject(){
+T * XList<T>::firstObject() const{
     return this->head->next->value;
 }
 
 template <class T>
-T * XList<T>::lastObject(){
+T * XList<T>::lastObject() const{
     return this->head->prev->value;
 }
 
 #pragma mark - iterator
 template <class T>
 typename XList<T>::Iterator XList<T>::begin(){
-    XList<T>::Iterator * iterator = new Iterator;
-    iterator->currentList = this;
-    iterator->currentNode = this->head->next;
+    XList<T>::Iterator iterator;
+    iterator.currentList = this;
+    iterator.currentNode = this->head->next;
     
-    return *iterator;
+    return iterator;
 }
 
 template <class T>
 typename XList<T>::Iterator XList<T>::end(){
-    XList<T>::Iterator * iterator = new Iterator;
-    iterator->currentList = this;
-    iterator->currentNode = this->head->prev;
+    XList<T>::Iterator iterator;
+    iterator.currentList = this;
+    iterator.currentNode = this->head->prev;
     
-    return *iterator;
+    return iterator;
 }
 
 template <class T>
@@ -183,7 +183,7 @@ void XList<T>::Iterator::prev(){
 }
 
 template <class T>
-bool XList<T>::Iterator::operator==(XList<T>::Iterator rhs){
+bool XList<T>::Iterator::operator==(const XList<T>::Iterator& rhs){
     return ((this->currentList == rhs.currentList)&&(this->currentNode == rhs.currentNode));
 }
 

@@ -33,7 +33,7 @@ public:
         T * currentItem();
         void next();
         void prev();
-        bool operator==(XList<T>::Iterator rhs);
+        bool operator==(const XList<T>::Iterator& rhs);
         
     private:
         ListNode * currentNode;
@@ -43,8 +43,8 @@ public:
     XList();
     ~XList();
     
-    int numberOfElements();
-    bool isEmpty();
+    int numberOfElements() const;
+    bool isEmpty() const;
     void clearList();
 
     void pushBack(T * element);
@@ -53,8 +53,8 @@ public:
     void deleteLastObject();
     void deleteFirstObject();
     
-    T * firstObject();
-    T * lastObject();
+    T * firstObject() const;
+    T * lastObject() const;
     
     Iterator begin();
     Iterator end();
