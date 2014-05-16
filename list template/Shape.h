@@ -22,11 +22,13 @@ public:
         return shapeCount;
     }
     
-    ~Shape() {
+    ~Shape()
+    {
         shapeCount --;
     }
     
-    Shape(std::string name):Printable(name) {
+    Shape(std::string name):Printable(name)
+    {
         shapeCount ++;
     }
 };

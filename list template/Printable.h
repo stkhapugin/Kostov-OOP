@@ -19,7 +19,8 @@ public:
     {
         std::cout << name << std::endl;
     }
-    using Named::Named;
+    
+    Printable(const std::string& name):Named::Named(name){};
 };
 
 #endif /* defined(__list_template__Printable__) */

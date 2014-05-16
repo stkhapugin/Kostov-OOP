@@ -16,10 +16,7 @@ class Named {
 protected:
     std::string name;
 public:
-    Named(std::string objName)
-    {
-        name = objName;
-    }
+    Named(const std::string& objName) : name (objName){}
 };
 
 #endif /* defined(__list_template__Named__) */
