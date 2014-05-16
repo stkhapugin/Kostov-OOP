@@ -8,7 +8,7 @@
 
 #include "ShapeTestCase.h"
 #include "Shape.h"
-#include "assert.h"
+#include <cassert>
 
 void testShapeCount(){
     std::string uno = "UNO";

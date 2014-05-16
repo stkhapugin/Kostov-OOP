@@ -8,8 +8,8 @@
 
 #include "XListTestCase.h"
 #include <iostream>
-#include <assert.h>
-#include <stdbool.h>
+#include <cassert>
+#include <cstdbool>
 #include "XList.h"
 
 void testCreation () {

@@ -10,7 +10,7 @@
 #define __list_template__List__
 
 #include <iostream>
-#include "assert.h"
+#include <cassert>
 
 // a non-retaining list
 template < class T > class XList{

@@ -10,7 +10,7 @@
 #define __list_template__Named__
 
 #include <iostream>
-#include "stdlib.h"
+#include <cstdlib>
 
 class Named {
 protected:

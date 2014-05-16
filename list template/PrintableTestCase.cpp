@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Stepan Khapugin. All rights reserved.
 //
 
-#include "PrintableTestCase.h"
-#include "assert.h"
 #include "Printable.h"
+#include <cassert>
+#include "PrintableTestCase.h"
 
 class mock_buff : public std::streambuf {
 public:
