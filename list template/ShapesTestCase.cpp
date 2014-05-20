@@ -111,6 +111,39 @@ void testSquare() {
     testSquarePrint();
 }
 
+#pragma mark - square tests
+
+void testPolylinePrint() {
+    
+    // setup
+    std::streambuf* cbuf = std::cout.rdbuf();
+    std::cout.flush();
+    std::string expected_output = "line Polyline((10,20), (11,21), (12,22))";
+    mock_buff mock_buff(cbuf, expected_output);
+    std::cout.rdbuf(&mock_buff);
+    
+    
+    Polyline line = Polyline("line");
+    Point pt1 = Point("", 10, 20);
+    Point pt2 = Point("", 11, 21);
+    Point pt3 = Point("", 12, 22);
+
+    line.AddPoint(pt1);
+    line.AddPoint(pt2);
+    line.AddPoint(pt3);
+    
+    std::cout<<&line;
+    mock_buff.checkExpectation();
+    
+    // teardown
+    std::cout.rdbuf(cbuf);
+}
+
+void testPolyline() {
+    testPolylinePrint();
+}
+
+
 #pragma mark - shapes tests
 
 void testShapes() {
@@ -118,4 +151,5 @@ void testShapes() {
     testCircle();
     testRect();
     testSquare();
+    testPolyline();
 }

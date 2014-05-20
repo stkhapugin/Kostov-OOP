@@ -13,6 +13,7 @@
 #include <cmath>
 #include "Shape.h"
 #include "Printable.h"
+#include "XList.h"
 
 class Point : public Shape {
 
@@ -107,6 +108,40 @@ public:
         out << m_name << " Square(side:" << side() << " ";
         out << "origin:(" << m_origin.m_x << ", " << m_origin.m_y << ")) ";
         out << "area: " << this->area();
+    }
+};
+
+class Polyline : public Shape {
+    
+private:
+    XList<Point> m_points;
+    
+public:
+    
+    Polyline(const std::string& name): Shape(name) {};
+    
+    void AddPoint( Point const & point) {
+        Point * newPoint = new Point(point);
+        m_points.pushBack(newPoint);
+    }
+    
+    virtual void printDescription(std::ostream &out){
+        out << m_name << " Polyline(";
+        XList<Point>::Iterator it = m_points.begin();
+        int l = m_points.numberOfElements();
+        
+        while(l > 0){
+            Point pt = *it.currentItem();
+            out << "(" << pt.m_x << "," << pt.m_y << ")";
+            it.next();
+            
+            l--;
+            if (l > 0){
+                std::cout << ", ";
+            }
+        }
+        
+        out << ")";
     }
 };
 #endif /* defined(__list_template__Shapes__) */

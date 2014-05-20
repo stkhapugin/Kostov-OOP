@@ -88,10 +88,14 @@ void testEnd(){
     XList<int> aList;
     int three = 3;
     int four = 4;
+    int five = 5;
+
     aList.pushBack(&three);
     aList.pushBack(&four);
+    aList.pushBack(&five);
+    
     XList<int>::Iterator it = aList.end();
-    assert(it.currentItem() == &four);
+    assert(it.currentItem() == &five);
 }
 
 void testClearList(){
