@@ -8,6 +8,8 @@
 
 #include "ShapeTestCase.h"
 #include "Shape.h"
+#include "OperatorOverload.h"
+#include "MockBuffer.h"
 #include <cassert>
 
 void testShapeCount(){
@@ -23,7 +25,25 @@ void testShapeCount(){
     assert(Shape::getCount() == 1);
 }
 
+void testOperatorOut () {
+    
+    // setup
+    std::streambuf* cbuf = std::cout.rdbuf();
+    std::cout.flush();
+    std::string expected_output = "Shape test";
+    mock_buff mock_buff(cbuf, expected_output);
+    std::cout.rdbuf(&mock_buff);
+    
+    Shape aShape = Shape(expected_output);
+    aShape.printDescription(std::cout);
+    mock_buff.checkExpectation();
+    
+    // teardown
+    std::cout.rdbuf(cbuf);
+}
+
 void testShape ()
 {
     testShapeCount();
+    testOperatorOut();
 }

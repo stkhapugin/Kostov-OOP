@@ -15,12 +15,12 @@
 class Printable: public Named {
     
 public:
-    void printOut() //< prints the object name
-    {
-        std::cout << name << std::endl;
-    }
     
     Printable(const std::string& name):Named::Named(name){};
+    
+    void printDescription(std::ostream &out) const{
+        out << m_name;
+    };
 };
 
 #endif /* defined(__list_template__Printable__) */

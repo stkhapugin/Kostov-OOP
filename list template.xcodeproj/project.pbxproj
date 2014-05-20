@@ -13,6 +13,7 @@
 		59220F0E1925259E007B9546 /* ShapeTestCase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59220F0C1925259E007B9546 /* ShapeTestCase.cpp */; };
 		6F16271718D6C58A00A72276 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F16271618D6C58A00A72276 /* main.cpp */; };
 		6F16271918D6C58A00A72276 /* list_template.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6F16271818D6C58A00A72276 /* list_template.1 */; };
+		6F85C403192B634A002FEDB8 /* ShapesTestCase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F85C401192B634A002FEDB8 /* ShapesTestCase.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,11 @@
 		6F16271618D6C58A00A72276 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6F16271818D6C58A00A72276 /* list_template.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = list_template.1; sourceTree = "<group>"; };
 		6F16272018D6C5A400A72276 /* XList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XList.h; sourceTree = "<group>"; };
+		6F85C3FF192B61EE002FEDB8 /* Shapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shapes.h; sourceTree = "<group>"; };
+		6F85C401192B634A002FEDB8 /* ShapesTestCase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShapesTestCase.cpp; sourceTree = "<group>"; };
+		6F85C402192B634A002FEDB8 /* ShapesTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapesTestCase.h; sourceTree = "<group>"; };
+		6F85C404192B671C002FEDB8 /* OperatorOverload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperatorOverload.h; sourceTree = "<group>"; };
+		6F85C408192B6A7E002FEDB8 /* MockBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockBuffer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,9 @@
 				59220F0719251DBB007B9546 /* Tests.h */,
 				59220F0C1925259E007B9546 /* ShapeTestCase.cpp */,
 				59220F0D1925259E007B9546 /* ShapeTestCase.h */,
+				6F85C401192B634A002FEDB8 /* ShapesTestCase.cpp */,
+				6F85C402192B634A002FEDB8 /* ShapesTestCase.h */,
+				6F85C408192B6A7E002FEDB8 /* MockBuffer.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -100,6 +109,8 @@
 				59220EFB1925183A007B9546 /* Named.h */,
 				59220EFE19251A4B007B9546 /* Printable.h */,
 				59220F0A19252346007B9546 /* Shape.h */,
+				6F85C3FF192B61EE002FEDB8 /* Shapes.h */,
+				6F85C404192B671C002FEDB8 /* OperatorOverload.h */,
 			);
 			path = "list template";
 			sourceTree = "<group>";
@@ -155,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F85C403192B634A002FEDB8 /* ShapesTestCase.cpp in Sources */,
 				59220EF919251240007B9546 /* XListTestCase.cpp in Sources */,
 				59220F0E1925259E007B9546 /* ShapeTestCase.cpp in Sources */,
 				6F16271718D6C58A00A72276 /* main.cpp in Sources */,

@@ -9,44 +9,27 @@
 #include "Printable.h"
 #include <cassert>
 #include "PrintableTestCase.h"
-
-class mock_buff : public std::streambuf {
-public:
-    mock_buff(std::streambuf* buf, char exp_char) : buf(buf), last_char(traits_type::eof()) { setp(0, 0); expected_char = exp_char; }
-    char get_last_char() const { return last_char; }
-    
-    virtual int_type overflow(int_type c) {
-        buf->sputc(c);
-        if (c!='\n'){ // ignore newlines
-            last_char = c;
-        }
-        return c;
-    }
-    
-    char expected_char;
-    void checkLastChar () { assert(last_char == expected_char); }
-private:
-    std::streambuf* buf;
-    char last_char;
-};
-
+#include "OperatorOverload.h"
+#include "MockBuffer.h"
 
 void testPrintOut(){
     
     std::streambuf* cbuf = std::cout.rdbuf(); // back up cout's streambuf
     std::cout.flush();
-    mock_buff mock_buff(cbuf, 'e');
+    std::string expected_output = "TestPrintable";
+    mock_buff mock_buff(cbuf, expected_output);
+    
     std::cout.rdbuf(&mock_buff);          // assign your streambuf to cout
     
-    std::string nameString = "TestPrintable";
-    Printable * aPrintable = new Printable(nameString);
-    aPrintable->printOut();
-    mock_buff.checkLastChar();
+    Printable * aPrintable = new Printable(expected_output);
+    aPrintable->printDescription(std::cout);
+    mock_buff.checkExpectation();
+    
     delete(aPrintable);
     
     std::cout.rdbuf(cbuf);
     
-    }
+}
 
 void testPrintable(){
     testPrintOut();

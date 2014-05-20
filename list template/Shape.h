@@ -17,12 +17,13 @@ static int shapeCount;
 class Shape: public Printable {
     
 public:
-    static int getCount() //< returns total number of all shapes in heap and on stack
+    
+    static int getCount()//< returns total number of all shapes in heap and on stack
     {
         return shapeCount;
     }
     
-    ~Shape()
+    virtual ~Shape()
     {
         shapeCount --;
     }
@@ -31,6 +32,8 @@ public:
     {
         shapeCount ++;
     }
+    
+    static int shapeCount;
 };
 
 #endif /* defined(__list_template__Shape__) */

@@ -8,6 +8,9 @@
 
 #include <iostream>
 #include "Tests.h"
+#include "Shape.h"
+
+int Shape::shapeCount = 0;
 
 int main(int argc, const char * argv[])
 {

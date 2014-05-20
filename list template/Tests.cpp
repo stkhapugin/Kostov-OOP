@@ -7,12 +7,20 @@
 //
 
 #include "Tests.h"
+#include <iostream>
 #include "PrintableTestCase.h"
 #include "XListTestCase.h"
 #include "ShapeTestCase.h"
+#include "ShapesTestCase.h"
 
 void runTests () {
+    
+    std::cout << "Running tests..." << std::endl;
+
     testPrintable();
     testXList();
     testShape();
+    testShapes();
+    
+    std::cout << "Tests ran successfully!" << std::endl;
 }
