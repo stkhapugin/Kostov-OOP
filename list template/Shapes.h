@@ -49,8 +49,18 @@ public:
 
 class Size {
     
-    public :
+    private :
     double m_width, m_height;
+    
+public:
+    
+    double width() const {
+        return m_width;
+    }
+    
+    double height() const {
+        return m_height;
+    }
     
     double area() const {
         return m_width * m_height;
@@ -61,9 +71,11 @@ class Size {
 
 class Rect : public Shape {
 
-    public :
+protected :
     Size m_size;
     Point m_origin;
+
+public:
     
     Rect(const std::string& name, double x, double y, double width, double height):
     Shape(name), m_origin("point", x, y), m_size(width, height) {};
@@ -72,12 +84,29 @@ class Rect : public Shape {
         return m_size.area();
     }
     
-    // outputs name Rect(size:(w, h) origin:(x, y))
+    // outputs name Rect(size:(w, h) origin:(x, y)) area: w*h
     virtual void printDescription(std::ostream &out) const{
-        out << m_name << " Rect(size:(" << m_size.m_width << ", " << m_size.m_height;
+        out << m_name << " Rect(size:(" << m_size.width() << ", " << m_size.height();
         out << ") origin:(" << m_origin.m_x << ", " << m_origin.m_y << ")) ";
         out << "area: " << this->area();
     }
 };
 
+class Square : public Rect {
+    
+public:
+    double side() const {
+        return m_size.width();
+    }
+    
+    Square(const std::string& name, double x, double y, double side) :
+    Rect(name, x, y, side, side) {};
+    
+    // outputs name Square(side:s origin:(x, y)) area: s^2
+    virtual void printDescription(std::ostream &out) const{
+        out << m_name << " Square(side:" << side() << " ";
+        out << "origin:(" << m_origin.m_x << ", " << m_origin.m_y << ")) ";
+        out << "area: " << this->area();
+    }
+};
 #endif /* defined(__list_template__Shapes__) */

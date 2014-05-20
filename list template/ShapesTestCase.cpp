@@ -88,10 +88,34 @@ void testRect() {
     testRectPrint();
 }
 
+#pragma mark - square tests
+
+void testSquarePrint() {
+    // setup
+    std::streambuf* cbuf = std::cout.rdbuf();
+    std::cout.flush();
+    std::string expected_output = "aSquare Square(side:30 origin:(10, 20)) area: 900";
+    mock_buff mock_buff(cbuf, expected_output);
+    std::cout.rdbuf(&mock_buff);
+    
+    
+    Square aSquare = Square("aSquare", 10, 20, 30);
+    std::cout << &aSquare;
+    mock_buff.checkExpectation();
+    
+    // teardown
+    std::cout.rdbuf(cbuf);
+}
+
+void testSquare() {
+    testSquarePrint();
+}
+
 #pragma mark - shapes tests
 
 void testShapes() {
     testPoint();
     testCircle();
     testRect();
+    testSquare();
 }
