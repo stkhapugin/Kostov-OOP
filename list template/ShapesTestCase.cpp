@@ -111,7 +111,7 @@ void testSquare() {
     testSquarePrint();
 }
 
-#pragma mark - square tests
+#pragma mark - polyline tests
 
 void testPolylinePrint() {
     
@@ -139,8 +139,35 @@ void testPolylinePrint() {
     std::cout.rdbuf(cbuf);
 }
 
+void testPolylineLengthZero() {
+    
+    Polyline line = Polyline("line");
+    assert(line.length() == 0);
+    Point pt1 = Point("", 10, 20);
+    line.AddPoint(pt1);
+    assert(line.length() == 0);
+}
+
+void testPolylineLength() {
+    
+    Polyline line = Polyline("line");
+    Point pt1 = Point("", 10, 20);
+    Point pt2 = Point("", 20, 20);
+    Point pt3 = Point("", 20, 40);
+    Point pt4 = Point("", 10, 40);
+
+    line.AddPoint(pt1);
+    line.AddPoint(pt2);
+    line.AddPoint(pt3);
+    line.AddPoint(pt4);
+    
+    assert(40.0 == line.length());
+}
+
 void testPolyline() {
     testPolylinePrint();
+    testPolylineLengthZero();
+    testPolylineLength();
 }
 
 

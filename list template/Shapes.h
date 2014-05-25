@@ -27,6 +27,12 @@ public:
     virtual void printDescription(std::ostream &out) {
         out << m_name << " Point" <<  "(" << m_x << ", " << m_y << ")";
     };
+    
+    static double distanceBetweenPoints(const Point& a, const Point& b){
+        double distX = abs(a.m_x - b.m_x);
+        double distY = abs(a.m_y - b.m_y);
+        return sqrt(distX*distX + distY*distY);
+    }
 };
 
 class Circle : public Shape {
@@ -118,6 +124,20 @@ private:
     
 public:
     
+    ~Polyline(){
+        
+        // as we're using a non-retaining list, we're copying points when adding them to the polyline. Thus we have to clean-up those copies in the destructor.
+        XList<Point>::Iterator it = m_points.begin();
+        int l = m_points.numberOfElements();
+        
+        while(l > 0){
+            delete(it.currentItem());
+            it.next();
+            l--;
+        }
+
+    };
+    
     Polyline(const std::string& name): Shape(name) {};
     
     void AddPoint( Point const & point) {
@@ -142,6 +162,31 @@ public:
         }
         
         out << ")";
+    }
+    
+    double length() {
+        if (m_points.numberOfElements() < 2){
+            return 0.0;
+        }
+        
+        XList<Point>::Iterator it = m_points.begin();
+        int l = m_points.numberOfElements();
+        
+        Point *a = it.currentItem();
+        it.next();
+        Point *b = it.currentItem();
+        l--;
+        
+        double len = 0.0;
+        while(l > 0){
+            len += Point::distanceBetweenPoints(*a, *b);
+            it.next();
+            a = b;
+            b = it.currentItem();
+            l--;
+        }
+        
+        return len;
     }
 };
 #endif /* defined(__list_template__Shapes__) */
