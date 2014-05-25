@@ -49,7 +49,7 @@ public:
     }
     
     // outputs: name Circle(center:(x,y), radius:radius)
-    virtual void printDescription(std::ostream &out) const{
+    virtual void printDescription(std::ostream &out) {
         out << m_name << " Circle(center:(" << m_center.m_x << ", " << m_center.m_y << "); radius:" << m_radius << "). Area: " << this->area();
     };
 };
@@ -92,7 +92,7 @@ public:
     }
     
     // outputs name Rect(size:(w, h) origin:(x, y)) area: w*h
-    virtual void printDescription(std::ostream &out) const{
+    virtual void printDescription(std::ostream &out){
         out << m_name << " Rect(size:(" << m_size.width() << ", " << m_size.height();
         out << ") origin:(" << m_origin.m_x << ", " << m_origin.m_y << ")) ";
         out << "area: " << this->area();
@@ -110,7 +110,7 @@ public:
     Rect(name, x, y, side, side) {};
     
     // outputs name Square(side:s origin:(x, y)) area: s^2
-    virtual void printDescription(std::ostream &out) const{
+    virtual void printDescription(std::ostream &out){
         out << m_name << " Square(side:" << side() << " ";
         out << "origin:(" << m_origin.m_x << ", " << m_origin.m_y << ")) ";
         out << "area: " << this->area();

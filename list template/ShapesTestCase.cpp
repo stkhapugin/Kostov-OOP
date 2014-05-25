@@ -52,7 +52,7 @@ void testCirclePrint() {
     std::cout.rdbuf(&mock_buff);
     
     Circle circle = Circle("a circle", 10, Point("pt", 10, 20));
-    std::cout << &circle;
+    std::cout << circle;
     mock_buff.checkExpectation();
     
     // teardown
@@ -76,7 +76,7 @@ void testRectPrint() {
 
     
     Rect aRect = Rect("aRect", 10, 20, 30, 40);
-    std::cout << &aRect;
+    std::cout << aRect;
     mock_buff.checkExpectation();
     
     // teardown
@@ -99,7 +99,7 @@ void testSquarePrint() {
     
     
     Square aSquare = Square("aSquare", 10, 20, 30);
-    std::cout << &aSquare;
+    std::cout << aSquare;
     mock_buff.checkExpectation();
     
     // teardown
@@ -131,7 +131,7 @@ void testPolylinePrint() {
     line.AddPoint(pt2);
     line.AddPoint(pt3);
     
-    std::cout<<&line;
+    std::cout << line;
     mock_buff.checkExpectation();
     
     // teardown

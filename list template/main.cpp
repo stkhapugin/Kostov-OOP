@@ -59,7 +59,6 @@ void task3()
     }
     Shape * shape = it.currentItem();
     std::cout << shape << std::endl; // last item
-    delete shape;
     
     shapesList.clearList();
     // freeing memory
@@ -79,7 +78,7 @@ void task3()
 
 int main(int argc, const char * argv[])
 {
-    runTests();
+    //runTests();
     task3();
     return 0;
 }

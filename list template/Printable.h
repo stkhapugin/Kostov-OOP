@@ -18,11 +18,11 @@ public:
     
     Printable(const std::string& name):Named::Named(name){};
     
-    virtual void printDescription(std::ostream &out) const{
+    virtual void printDescription(std::ostream &out){
         out << m_name;
     };
     
-    friend std::ostream & operator << (std::ostream& s, const Printable& obj) {
+    friend std::ostream & operator << (std::ostream& s, Printable& obj) {
         obj.printDescription(s);
         return s;
     }
