@@ -33,6 +33,11 @@ public:
         shapeCount ++;
     }
     
+    Shape(const Shape& shape): Printable(shape)
+    {
+        shapeCount ++;
+    }
+    
     static int shapeCount;
 };
 

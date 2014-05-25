@@ -9,7 +9,6 @@
 #include "Printable.h"
 #include <cassert>
 #include "PrintableTestCase.h"
-#include "OperatorOverload.h"
 #include "MockBuffer.h"
 
 void testPrintOut(){

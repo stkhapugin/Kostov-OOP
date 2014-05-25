@@ -23,7 +23,7 @@ public:
     char get_last_char() const { return last_char; }
     
     virtual int_type overflow(int_type c) {
-        //buf->sputc(c); // suppress actual printing
+        buf->sputc(c); // suppress actual printing
         if (c!='\n'){ // ignore newlines
             buffered_string += c;
         }

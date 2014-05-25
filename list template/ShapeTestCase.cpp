@@ -8,7 +8,6 @@
 
 #include "ShapeTestCase.h"
 #include "Shape.h"
-#include "OperatorOverload.h"
 #include "MockBuffer.h"
 #include <cassert>
 
@@ -35,7 +34,7 @@ void testOperatorOut () {
     std::cout.rdbuf(&mock_buff);
     
     Shape aShape = Shape(expected_output);
-    aShape.printDescription(std::cout);
+    std::cout << aShape;
     mock_buff.checkExpectation();
     
     // teardown

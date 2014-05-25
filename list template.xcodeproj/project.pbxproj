@@ -49,7 +49,6 @@
 		6F85C3FF192B61EE002FEDB8 /* Shapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shapes.h; sourceTree = "<group>"; };
 		6F85C401192B634A002FEDB8 /* ShapesTestCase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShapesTestCase.cpp; sourceTree = "<group>"; };
 		6F85C402192B634A002FEDB8 /* ShapesTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapesTestCase.h; sourceTree = "<group>"; };
-		6F85C404192B671C002FEDB8 /* OperatorOverload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperatorOverload.h; sourceTree = "<group>"; };
 		6F85C408192B6A7E002FEDB8 /* MockBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockBuffer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +109,6 @@
 				59220EFE19251A4B007B9546 /* Printable.h */,
 				59220F0A19252346007B9546 /* Shape.h */,
 				6F85C3FF192B61EE002FEDB8 /* Shapes.h */,
-				6F85C404192B671C002FEDB8 /* OperatorOverload.h */,
 			);
 			path = "list template";
 			sourceTree = "<group>";

@@ -18,9 +18,14 @@ public:
     
     Printable(const std::string& name):Named::Named(name){};
     
-    void printDescription(std::ostream &out) const{
+    virtual void printDescription(std::ostream &out) const{
         out << m_name;
     };
+    
+    friend std::ostream & operator << (std::ostream& s, const Printable& obj) {
+        obj.printDescription(s);
+        return s;
+    }
 };
 
 #endif /* defined(__list_template__Printable__) */

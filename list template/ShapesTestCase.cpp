@@ -8,7 +8,6 @@
 
 #include "ShapesTestCase.h"
 #include "Shapes.h"
-#include "OperatorOverload.h"
 #include "MockBuffer.h"
 #include <cassert>
 
@@ -30,7 +29,7 @@ void testPrint () {
     std::cout.rdbuf(&mock_buff);
     
     Point pt = Point("somepoint", 20.0, 30.0);
-    std::cout << &pt;
+    std::cout << pt;
     mock_buff.checkExpectation();
     
     // teardown
