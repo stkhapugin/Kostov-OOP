@@ -52,13 +52,12 @@ void task3()
     assert(Shape::getCount() == 16); // 5 figures in list and their copies, 4 points in the polyline, rect's origin, square's origin, circle's center
     
     XList<Shape>::Iterator it = shapesList.begin();
-    while(!(it == shapesList.end())){
-        Shape shape = *it.currentItem();
-        std::cout << shape << std::endl;
+    int l = shapesList.numberOfElements() + 1;
+    while(--l > 0){
+        Shape * shape = it.currentItem();
+        std::cout << *shape << std::endl;
         it.next();
     }
-    Shape * shape = it.currentItem();
-    std::cout << shape << std::endl; // last item
     
     shapesList.clearList();
     // freeing memory
