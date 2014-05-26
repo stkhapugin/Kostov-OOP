@@ -33,11 +33,11 @@ public:
         T * currentItem();
         void next();
         void prev();
-        bool operator==(const XList<T>::Iterator& rhs);
+        bool operator==(const XList<T>::Iterator& rhs) const;
         
     private:
         ListNode * currentNode;
-        XList<T> * currentList;
+        const XList<T> * currentList;
     };
     
     XList();
@@ -56,7 +56,7 @@ public:
     T * firstObject() const;
     T * lastObject() const;
     
-    Iterator begin();
+    Iterator begin() const;
     Iterator end();
 };
 

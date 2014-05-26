@@ -132,7 +132,7 @@ T * XList<T>::lastObject() const{
 
 #pragma mark - iterator
 template <class T>
-typename XList<T>::Iterator XList<T>::begin(){
+typename XList<T>::Iterator XList<T>::begin() const{
     XList<T>::Iterator iterator;
     iterator.currentList = this;
     iterator.currentNode = this->head->next;
@@ -183,7 +183,7 @@ void XList<T>::Iterator::prev(){
 }
 
 template <class T>
-bool XList<T>::Iterator::operator==(const XList<T>::Iterator& rhs){
+bool XList<T>::Iterator::operator==(const XList<T>::Iterator& rhs) const{
     return ((this->currentList == rhs.currentList)&&(this->currentNode == rhs.currentNode));
 }
 

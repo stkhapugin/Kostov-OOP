@@ -24,7 +24,7 @@ public:
     Point(const std::string &name, const double x, const double y):Shape(name), m_x(x), m_y(y) {}
     
     // outputs "name Point(x, y)"
-    virtual void printDescription(std::ostream &out) {
+    virtual void printDescription(std::ostream &out) const{
         out << m_name << " Point" <<  "(" << m_x << ", " << m_y << ")";
     };
     
@@ -49,7 +49,7 @@ public:
     }
     
     // outputs: name Circle(center:(x,y), radius:radius)
-    virtual void printDescription(std::ostream &out) {
+    virtual void printDescription(std::ostream &out) const{
         out << m_name << " Circle(center:(" << m_center.m_x << ", " << m_center.m_y << "); radius:" << m_radius << "). Area: " << this->area();
     };
 };
@@ -92,7 +92,7 @@ public:
     }
     
     // outputs name Rect(size:(w, h) origin:(x, y)) area: w*h
-    virtual void printDescription(std::ostream &out){
+    virtual void printDescription(std::ostream &out) const{
         out << m_name << " Rect(size:(" << m_size.width() << ", " << m_size.height();
         out << ") origin:(" << m_origin.m_x << ", " << m_origin.m_y << ")) ";
         out << "area: " << this->area();
@@ -110,7 +110,7 @@ public:
     Rect(name, x, y, side, side) {};
     
     // outputs name Square(side:s origin:(x, y)) area: s^2
-    virtual void printDescription(std::ostream &out){
+    virtual void printDescription(std::ostream &out) const{
         out << m_name << " Square(side:" << side() << " ";
         out << "origin:(" << m_origin.m_x << ", " << m_origin.m_y << ")) ";
         out << "area: " << this->area();
@@ -145,7 +145,7 @@ public:
         m_points.pushBack(newPoint);
     }
     
-    virtual void printDescription(std::ostream &out){
+    virtual void printDescription(std::ostream &out) const{
         out << m_name << " Polyline(";
         XList<Point>::Iterator it = m_points.begin();
         int l = m_points.numberOfElements();

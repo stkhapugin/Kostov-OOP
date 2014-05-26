@@ -18,7 +18,7 @@ public:
     
     Printable(const std::string& name):Named::Named(name){};
     
-    virtual void printDescription(std::ostream &out){
+    virtual void printDescription(std::ostream &out) const{
         out << m_name;
     };
     

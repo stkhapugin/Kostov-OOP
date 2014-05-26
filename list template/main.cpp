@@ -77,7 +77,7 @@ void task3()
 
 int main(int argc, const char * argv[])
 {
-    //runTests();
+    runTests();
     task3();
     return 0;
 }
