@@ -8,9 +8,8 @@
 
 #include <iostream>
 #include "Tests.h"
-#include "Shape.h"
 #include "Shapes.h"
-#include "XList.h"
+#include "XList.hpp"
 
 int Shape::shapeCount = 0;
 

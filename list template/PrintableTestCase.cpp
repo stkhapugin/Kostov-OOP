@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Stepan Khapugin. All rights reserved.
 //
 
-#include "Printable.h"
+#include "Shapes.h"
 #include <cassert>
 #include "PrintableTestCase.h"
 #include "MockBuffer.h"

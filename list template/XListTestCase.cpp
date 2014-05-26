@@ -10,7 +10,7 @@
 #include <iostream>
 #include <cassert>
 #include <cstdbool>
-#include "XList.h"
+#include "XList.hpp"
 
 void testCreation () {
     

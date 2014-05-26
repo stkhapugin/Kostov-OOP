@@ -10,7 +10,7 @@
 #define __list_template__PrintableTestCase__
 
 #include <iostream>
-#include "Printable.h"
+#include "Shapes.h"
 
 void testPrintable();
 

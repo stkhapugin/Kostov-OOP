@@ -11,9 +11,59 @@
 
 #include <iostream>
 #include <cmath>
-#include "Shape.h"
-#include "Printable.h"
-#include "XList.h"
+#include "XList.hpp"
+
+class Named {
+protected:
+    std::string m_name;
+public:
+    Named(const std::string& objName) : m_name (objName){}
+};
+
+class Printable: public Named {
+    
+public:
+    
+    Printable(const std::string& name):Named::Named(name){};
+    
+    virtual void printDescription(std::ostream &out) const{
+        out << m_name;
+    };
+    
+    friend std::ostream & operator << (std::ostream& s, Printable& obj) {
+        obj.printDescription(s);
+        return s;
+    }
+};
+
+static int shapeCount;
+
+class Shape: public Printable {
+    
+public:
+    
+    static int getCount()//< returns total number of all shapes in heap and on stack
+    {
+        return shapeCount;
+    }
+    
+    virtual ~Shape()
+    {
+        shapeCount --;
+    }
+    
+    Shape(std::string name):Printable(name)
+    {
+        shapeCount ++;
+    }
+    
+    Shape(const Shape& shape): Printable(shape)
+    {
+        shapeCount ++;
+    }
+    
+    static int shapeCount;
+};
 
 class Point : public Shape {
 

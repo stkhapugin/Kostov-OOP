@@ -1,13 +1,65 @@
 //
-//  XList.tpp.h
+//  List.h
 //  list template
 //
-//  Created by Khapugin Stepan on 15/05/14.
+//  Created by Stepan Khapugin on 3/17/14.
 //  Copyright (c) 2014 Stepan Khapugin. All rights reserved.
 //
 
-#ifndef list_template_XList_tpp_h
-#define list_template_XList_tpp_h
+#ifndef __list_template__List__
+#define __list_template__List__
+
+#include <iostream>
+#include <cassert>
+#include <exception>
+
+// a non-retaining list
+template < class T > class XList{
+
+private:
+    struct ListNode {
+        T *value;
+        ListNode *next;
+        ListNode *prev;
+        ListNode(T *value, ListNode * next, ListNode * prev);
+    };
+    
+    ListNode * head;
+    void deleteNode(ListNode * node);
+    
+public:
+    class Iterator {
+        friend class XList;
+    public:
+        T * currentItem();
+        void next();
+        void prev();
+        bool operator==(const XList<T>::Iterator& rhs) const;
+        
+    private:
+        ListNode * currentNode;
+        const XList<T> * currentList;
+    };
+    
+    XList();
+    ~XList();
+    
+    int numberOfElements() const;
+    bool isEmpty() const;
+    void clearList();
+
+    void pushBack(T * element);
+    void pushForward(T * element);
+    
+    void deleteLastObject();
+    void deleteFirstObject();
+    
+    T * firstObject() const;
+    T * lastObject() const;
+    
+    Iterator begin() const;
+    Iterator end();
+};
 
 #pragma mark - ListNode implementation
 
@@ -102,10 +154,10 @@ void XList<T>::deleteLastObject() {
     ListNode * naught = this->head;
     ListNode * deletedNode = naught->prev;
     if (deletedNode != naught){
-
+        
         this->deleteNode(deletedNode);
     } else {
-
+        
         throw std::string("empty list exception");
     }
 }
@@ -113,9 +165,9 @@ void XList<T>::deleteLastObject() {
 template <class T>
 void XList<T>::deleteNode(ListNode * node){
     
-    // we're not throwing any exceptions here. it's our private method. we check for consistency 
+    // we're not throwing any exceptions here. it's our private method. we check for consistency
     // using asserts instead.
-    asssert(this->head != node);
+    assert(this->head != node);
     
     node->prev->next = node->next;
     node->next->prev = node->prev;
@@ -191,5 +243,4 @@ bool XList<T>::Iterator::operator==(const XList<T>::Iterator& rhs) const{
     return ((this->currentList == rhs.currentList)&&(this->currentNode == rhs.currentNode));
 }
 
-
-#endif
+#endif /* defined(__list_template__List__) */

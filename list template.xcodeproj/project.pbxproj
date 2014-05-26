@@ -30,22 +30,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		59220EF419250DD7007B9546 /* XList.tpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = XList.tpp; sourceTree = "<group>"; };
 		59220EF719251240007B9546 /* XListTestCase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XListTestCase.cpp; sourceTree = "<group>"; };
 		59220EF819251240007B9546 /* XListTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XListTestCase.h; sourceTree = "<group>"; };
-		59220EFB1925183A007B9546 /* Named.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Named.h; sourceTree = "<group>"; };
-		59220EFE19251A4B007B9546 /* Printable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Printable.h; sourceTree = "<group>"; };
 		59220F0019251B46007B9546 /* PrintableTestCase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrintableTestCase.cpp; sourceTree = "<group>"; };
 		59220F0119251B46007B9546 /* PrintableTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintableTestCase.h; sourceTree = "<group>"; };
 		59220F0619251DBB007B9546 /* Tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tests.cpp; sourceTree = "<group>"; };
 		59220F0719251DBB007B9546 /* Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests.h; sourceTree = "<group>"; };
-		59220F0A19252346007B9546 /* Shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shape.h; sourceTree = "<group>"; };
 		59220F0C1925259E007B9546 /* ShapeTestCase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShapeTestCase.cpp; sourceTree = "<group>"; };
 		59220F0D1925259E007B9546 /* ShapeTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeTestCase.h; sourceTree = "<group>"; };
 		6F16271318D6C58A00A72276 /* list template */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "list template"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F16271618D6C58A00A72276 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6F16271818D6C58A00A72276 /* list_template.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = list_template.1; sourceTree = "<group>"; };
-		6F16272018D6C5A400A72276 /* XList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XList.h; sourceTree = "<group>"; };
+		6F16272018D6C5A400A72276 /* XList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = XList.hpp; sourceTree = "<group>"; };
 		6F85C3FF192B61EE002FEDB8 /* Shapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shapes.h; sourceTree = "<group>"; };
 		6F85C401192B634A002FEDB8 /* ShapesTestCase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShapesTestCase.cpp; sourceTree = "<group>"; };
 		6F85C402192B634A002FEDB8 /* ShapesTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapesTestCase.h; sourceTree = "<group>"; };
@@ -103,11 +99,7 @@
 				59220F0319251CE6007B9546 /* Tests */,
 				6F16271618D6C58A00A72276 /* main.cpp */,
 				6F16271818D6C58A00A72276 /* list_template.1 */,
-				6F16272018D6C5A400A72276 /* XList.h */,
-				59220EF419250DD7007B9546 /* XList.tpp */,
-				59220EFB1925183A007B9546 /* Named.h */,
-				59220EFE19251A4B007B9546 /* Printable.h */,
-				59220F0A19252346007B9546 /* Shape.h */,
+				6F16272018D6C5A400A72276 /* XList.hpp */,
 				6F85C3FF192B61EE002FEDB8 /* Shapes.h */,
 			);
 			path = "list template";

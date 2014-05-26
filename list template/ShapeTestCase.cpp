@@ -7,7 +7,7 @@
 //
 
 #include "ShapeTestCase.h"
-#include "Shape.h"
+#include "Shapes.h"
 #include "MockBuffer.h"
 #include <cassert>
 
