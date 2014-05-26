@@ -127,6 +127,37 @@ void testIterator(){
     assert(*it.currentItem() == 0);
 }
 
+void testDeleteFirstLastException(){
+    
+    XList<int> aList;
+    int a = 5;
+    aList.pushBack(&a);
+    
+    try {
+        aList.deleteFirstObject();
+    } catch(std::string e){
+        assert(false);
+    }
+    
+    bool exceptionCaught = false;
+    try {
+        aList.deleteFirstObject();
+    } catch(std::string e){
+        exceptionCaught = true;
+    }
+    
+    assert(exceptionCaught);
+    
+    exceptionCaught = false;
+    try {
+        aList.deleteLastObject();
+    } catch (std::string e){
+        exceptionCaught = true;
+    }
+    
+    assert(exceptionCaught);
+}
+
 void testXList() {
     std::cout << "running XList tests" << std::endl;
     testCreation();
@@ -140,5 +171,6 @@ void testXList() {
     testEnd();
     testClearList();
     testIterator();
+    testDeleteFirstLastException();
     std::cout << "finished running XList tests" << std::endl;
 }

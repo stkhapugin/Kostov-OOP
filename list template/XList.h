@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <cassert>
+#include <exception>
 
 // a non-retaining list
 template < class T > class XList{

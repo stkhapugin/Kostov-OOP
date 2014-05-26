@@ -93,7 +93,7 @@ void XList<T>::deleteFirstObject() {
     if (deletedNode != naught){
         this->deleteNode(deletedNode);
     } else {
-        throw "XList: cannot delete first object in an empty list";
+        throw std::string("empty list exception");
     }
 }
 
@@ -102,16 +102,20 @@ void XList<T>::deleteLastObject() {
     ListNode * naught = this->head;
     ListNode * deletedNode = naught->prev;
     if (deletedNode != naught){
+
         this->deleteNode(deletedNode);
     } else {
-        throw "XList: cannot delete first object in an empty list";
+
+        throw std::string("empty list exception");
     }
 }
 
 template <class T>
 void XList<T>::deleteNode(ListNode * node){
     
-    assert(this->head != node);
+    // we're not throwing any exceptions here. it's our private method. we check for consistency 
+    // using asserts instead.
+    asssert(this->head != node);
     
     node->prev->next = node->next;
     node->next->prev = node->prev;
